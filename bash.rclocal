@@ -1,0 +1,33 @@
+# The system wide local config file.
+# This file is sourced from the user's ~/.bashrc_local.
+# See /etc/skel/.bashrc_local for more info.
+
+# Setup system-wide aliases
+SOURCEIT=/etc/bash_aliases
+[ -f "$SOURCEIT" ] && . "$SOURCEIT"
+
+# Fix system wide list colors if we have a colors database file
+DB=/etc/dircolors_db
+if [ -f "$DB" ]; then
+  eval "$(dircolors -b $DB)"
+fi
+
+# Enable bash completion here so that we do not need to uncomment it in the
+# default system config files
+SOURCEIT=/etc/bash_completion
+[ -f "$SOURCEIT" ] && . "$SOURCEIT"
+
+# Customize the prompt with colors to give a cleared indication about the host
+# we're on and who we are
+PS_e='$ '  # Prompt end is different for root and normal user
+if [ `/usr/bin/whoami` = 'root' ]; then
+        PS_e='\[\033[41;1;37m\]#\[\033[0m\] '
+fi
+# Add a colored host part if we have a color file for this host.
+if [ -f '/etc/host_prompt_colors' ]; then
+        PS_h='\[\033[44;1;37m\]vs\[\033[0m\]'
+        PS_h=$(grep "^prompt:" /etc/host_prompt_colors | sed 's/prompt: *//')
+fi
+[ -z "$PS_h" ] && PS_h='\h'
+# Set the prompt
+PS1="[\u@${PS_h}:\W]${PS_e}"

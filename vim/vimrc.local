@@ -1,0 +1,25 @@
+" Configuration file for vim
+" This is the local config sourced by vimrc
+
+" We want syntax highligting on
+syntax on
+
+" And we are using a dark background
+set background=dark
+
+" Some more things we want...
+set showcmd             " Show (partial) command in status line.
+set showmatch           " Show matching brackets.
+set ignorecase          " Do case insensitive matching
+set incsearch           " Incremental search
+set autowrite           " Automatically save before commands like :next and :make
+set nowrap
+set tabstop=4
+
+" Make Ctrl-S save command
+map <C-S> :w<CR>
+map! <C-S> :w<CR>
+
+" May need this if we have arb backups laying around
+"set nobackup           " Don't keep a backup file
+

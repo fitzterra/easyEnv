@@ -1,0 +1,9 @@
+# Sets a specific prompt color for this host.
+# All lines in this file expect one starting with prompt: will be ignored.
+# This file is expected to use ansi color codes to colorize the bash \h
+# prompt place holder to give the host name a special color in the
+# bash prompt.
+# More details on colors here: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+
+prompt: \[\033[31;47m\]\h\[\033[0m\]
+
