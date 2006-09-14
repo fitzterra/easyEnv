@@ -31,3 +31,7 @@ fi
 [ -z "$PS_h" ] && PS_h='\h'
 # Set the prompt
 PS1="[\u@${PS_h}:\W]${PS_e}"
+
+# We're using ''user private groups'' , so we can set the umask to 002
+umask 002
+
