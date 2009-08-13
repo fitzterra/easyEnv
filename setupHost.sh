@@ -83,8 +83,21 @@ function setUserFiles ()
 		# Copy them
 		cp -ir $SOURCES ${d}/ || exit 1
 		# Set ownership and permissions
-		chown --reference $f $DESTS || exit 1
-		chmod --reference $f $DESTS || exit 1
+		for n in $DESTS; do
+			if [ -f $n ]; then
+				# This is a file
+				chown --reference $f $DESTS || exit 1
+				chmod --reference $f $DESTS || exit 1
+			else
+				# This is a dir
+				# A dir might have a .svn subdir... delete these
+				find $n -type d -name ".svn" | xargs rm -rf
+				find $n -type d | xargs chown --reference $d
+				find $n -type d | xargs chmod --reference $d
+				find $n -type f | xargs chown --reference $f
+				find $n -type f | xargs chmod --reference $f
+			fi
+		done
 	
 		echo " done."
 	done
