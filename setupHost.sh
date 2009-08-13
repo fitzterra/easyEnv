@@ -65,7 +65,7 @@ function setUserFiles ()
 	# ownership and permission to the same as for the .bashrc in the same dir.
 
 	##~~ Variables ~~##
-	FILES="_p_/.inputrc _p_/.bashrc_local"
+	FILES="_p_/.inputrc _p_/.bashrc_local _p_/.vim"
 	SOURCES=${FILES//_p_/${MYDIR}/skel}
 	BASHRCs="/etc/skel/.bashrc /root/.bashrc /home/*/.bashrc"
 
@@ -81,7 +81,7 @@ function setUserFiles ()
 		echo -n "Copying files to: $d ..."
 
 		# Copy them
-		cp -i $SOURCES ${d}/ || exit 1
+		cp -ir $SOURCES ${d}/ || exit 1
 		# Set ownership and permissions
 		chown --reference $f $DESTS || exit 1
 		chmod --reference $f $DESTS || exit 1
