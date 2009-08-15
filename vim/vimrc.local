@@ -19,6 +19,12 @@ set tabstop=4
 " Make Ctrl-S save command
 map <C-S> :w<CR>
 map! <C-S> :w<CR>
+" Make Ctrl-Tab and Ctrl-Shift-Tab cycle through open tabs
+map <C-Tab> :tabnext<CR>
+map! <C-Tab> :tabnext<CR>
+map <C-S-Tab> :tabprevious<CR>
+map! <C-S-Tab> :tabprevious<CR>
+
 
 " May need this if we have arb backups laying around
 "set nobackup           " Don't keep a backup file
