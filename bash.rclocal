@@ -32,6 +32,9 @@ fi
 # Set the prompt
 PS1="[\u@${PS_h}:\W]${PS_e}"
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
 # We're using ''user private groups'' , so we can set the umask to 002
 umask 002
 
