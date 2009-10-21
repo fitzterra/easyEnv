@@ -1,9 +1,9 @@
 " Configuration file for gvim
 " This is the local config sourced from gvimrc
 
-" Make Ctrl-S save command
-map <C-S> :w<CR>
-map! <C-S> :w<CR>
+" Make Ctrl-S save command  - Note: These are loaded from vimrc.local already
+"map <C-S> :w<CR>
+"map! <C-S> :w<CR>
 
 " Set shift width to 8
 set sw=4

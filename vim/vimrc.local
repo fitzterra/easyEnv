@@ -16,14 +16,19 @@ set autowrite           " Automatically save before commands like :next and :mak
 set nowrap
 set tabstop=4
 
-" Make Ctrl-S save command
+" Make Ctrl-S save command in both normal mode and insert mode
 map <C-S> :w<CR>
-map! <C-S> :w<CR>
-" Make Ctrl-Tab and Ctrl-Shift-Tab cycle through open tabs
+imap <C-S> <Esc>:w<CR>
+" Make Ctrl-Tab and Ctrl-Shift-Tab cycle through open tabs in both normal mode
+" and insert mode
 map <C-Tab> :tabnext<CR>
-map! <C-Tab> :tabnext<CR>
+imap <C-Tab> <Esc>:tabnext<CR>
 map <C-S-Tab> :tabprevious<CR>
-map! <C-S-Tab> :tabprevious<CR>
+imap <C-S-Tab> <Esc>:tabprevious<CR>
+" Ctrl-N opens a new tab with the file editor in the current dir in both
+" normal and insert modes
+map <C-N> :tabnew .<CR>
+imap <C-N> <Esc>:tabnew .<CR>
 
 
 " May need this if we have arb backups laying around
