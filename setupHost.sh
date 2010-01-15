@@ -14,13 +14,15 @@ function setBashRcHook ()
 	
 	##~~ Variables ~~##
 	SIG='###-easyEnv:HOOK'
-	HOOK=$(cat <<__HOOK__
+	HOOK=$(
+cat <<__HOOK__
 
 $SIG -- do not remove. added by $(basename $0)
 # Source the local config changes file if it exists
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 
-__HOOK__)
+__HOOK__
+)
 	FILES="/etc/skel/.bashrc /root/.bashrc /home/*/.bashrc"
 	
 	# Update all files
