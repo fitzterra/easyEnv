@@ -83,7 +83,7 @@ function setUserFiles ()
 		echo -n "Copying files to: $d ..."
 
 		# Copy them
-		cp -iur $SOURCES ${d}/ || exit 1
+		cp -iur --backup=t $SOURCES ${d}/ || exit 1
 		# Set ownership and permissions
 		for n in $DESTS; do
 			if [ -f $n ]; then
