@@ -145,6 +145,14 @@ function setupVim ()
 	echo " done."
 }
 
+function checkSystem ()
+{
+	# Does some system checks to ensure all required software is installed
+
+	# Do we have 'realpath'
+	which realpath >/dev/null || echo "** Please install realpath: sudo aptitude install realpath"
+}
+
 ##~~ MAIN ~~##
 
 # Must be root
@@ -164,5 +172,8 @@ setSystemFiles
 
 # Do vim
 setupVim 
+
+# System checks
+checkSystem 
 
 
