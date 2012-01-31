@@ -67,7 +67,7 @@ function setUserFiles ()
 	# ownership and permission to the same as for the .bashrc in the same dir.
 
 	##~~ Variables ~~##
-	FILES="_p_/.inputrc _p_/.bashrc_local _p_/.vim _p_/System"
+	FILES="_p_/.inputrc _p_/.bashrc_local _p_/.vim _p_/System _p_/bin"
 	SOURCES=${FILES//_p_/${MYDIR}/skel}
 	BASHRCs="/etc/skel/.bashrc /root/.bashrc /home/*/.bashrc"
 
@@ -98,6 +98,12 @@ function setUserFiles ()
 				find $n -type d | xargs chmod --reference $d
 				find $n -type f | xargs chown --reference $f
 				find $n -type f | xargs chmod --reference $f
+				# The ~/bin dir is handled diffirently. The dir and all it's
+				# files should have permissions 700, so it is readable/writable
+				# by the owner only
+				if [ "$(basename $n)" == "bin" ]; then
+					chmod -R 700 $n
+				fi
 			fi
 		done
 	
