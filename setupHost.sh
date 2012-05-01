@@ -93,11 +93,11 @@ function setUserFiles ()
 			else
 				# This is a dir
 				# A dir might have a .svn subdir... delete these
-				find $n -type d -name ".svn" | xargs rm -rf
-				find $n -type d | xargs chown --reference $d
-				find $n -type d | xargs chmod --reference $d
-				find $n -type f | xargs chown --reference $f
-				find $n -type f | xargs chmod --reference $f
+				find $n -xdev -type d -name ".svn" | xargs rm -rf
+				find $n -xdev -type d | xargs chown --reference $d
+				find $n -xdev -type d | xargs chmod --reference $d
+				find $n -xdev -type f | xargs chown --reference $f
+				find $n -xdev -type f | xargs chmod --reference $f
 				# The ~/bin dir is handled diffirently. The dir and all it's
 				# files should have permissions 700, so it is readable/writable
 				# by the owner only
