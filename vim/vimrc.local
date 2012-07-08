@@ -15,6 +15,7 @@ set incsearch           " Incremental search
 set autowrite           " Automatically save before commands like :next and :make
 set nowrap
 set tabstop=4
+set modeline			" Allow support for modelines in files
 
 " Make Ctrl-S save command in both normal mode and insert mode
 map <C-S> :w<CR>
