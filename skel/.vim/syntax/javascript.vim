@@ -23,6 +23,9 @@ if version < 600    " Don't support the old version
   unlet! b:javascript_fold
 endif
 
+"" break lines on 80 chars
+setlocal textwidth=80
+
 "" dollar sigh is permittd anywhere in an identifier
 setlocal iskeyword+=$
 
