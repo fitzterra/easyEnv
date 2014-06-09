@@ -35,6 +35,31 @@ PS1="[\u@${PS_h}:\W]${PS_e}"
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
+# Add mark, jump, unmark and marks commands to create easy aliases to
+# directories visited often. Also adds bash-completion help for these new
+# commands.
+export MARKPATH=$HOME/.marks
+function jump { 
+    cd . && cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark {
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark { 
+    rm -i "$MARKPATH/$1"
+}
+function marks {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+_completemarks() {
+    local curw=${COMP_WORDS[COMP_CWORD]}
+    local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+    COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+    return 0
+}
+complete -F _completemarks jump unmark
+# End jump commands setup
+
 # We're using ''user private groups'' , so we can set the umask to 002
 umask 002
 
