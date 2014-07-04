@@ -1,38 +1,5 @@
 " Configuration file for gvim
 " This is the local config sourced from gvimrc
 
-" Make Ctrl-S save command  - Note: These are loaded from vimrc.local already
-"map <C-S> :w<CR>
-"map! <C-S> :w<CR>
-
-" Set shift width to 8
-set sw=4
-set sta
-set ai
-set si
-
-
-" I like to have folding available
- set foldmethod=manual
- set foldcolumn=3
-" Set my own fold colors
- highlight Folded guibg=gray40 guifg=White
- highlight FoldColumn guibg=gray40 guifg=White
-"
-"
-"
-" Set nice colors
-" background for normal text is light grey
-" Text below the last line is darker grey
-" Cursor is green
-" Constants are not underlined but have a slightly
-" lighter background
- highlight Normal guibg=gray20 guifg=White
- highlight Cursor guibg=Green guifg=NONE
- highlight NonText guibg=gray25
- highlight Constant gui=NONE guibg=gray22
- highlight Special gui=NONE guibg=grey30
- highlight Search guibg=OldLace
- highlight Search guibg=OldLace guifg=RoyalBlue
-
-
+" Most config has now been placed in vimrc.local and only GUI specific config
+" should go in here

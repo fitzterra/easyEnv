@@ -13,9 +13,37 @@ set showmatch           " Show matching brackets.
 set ignorecase          " Do case insensitive matching
 set incsearch           " Incremental search
 set autowrite           " Automatically save before commands like :next and :make
-set nowrap
-set tabstop=4
+set nowrap				" Do not wrap long lines
+set tabstop=4			" Tabs in existing files are 4 columns wide
+set expandtab			" Inserting a tab will create spaces. Use Ctrl-V Tab for real tab
+set softtabstop=4		" Number of spaces to use for a tab with expandtab set
+set shiftwidth=4		" Autoindentation is 4 columns
+set smarttab			" Switch on smarttab
+set autoindent			" Copy indents from current line when starting a new line
+set smartindent			" Set smart indenting on
 set modeline			" Allow support for modelines in files
+set hlsearch			" Highlight search results
+set colorcolumn=80		" Adds a visual indicatero or column 80
+
+" Make folding available but leave it manual unless overridden by a syntax file
+set foldmethod=manual
+set foldcolumn=3
+" Set fold colors
+highlight Folded guibg=gray40 guifg=White
+highlight FoldColumn guibg=gray40 guifg=White
+
+" Set nice colors
+" background for normal text is light grey
+" Text below the last line is darker grey
+" Cursor is green
+" Constants are not underlined but have a slightly lighter background
+highlight Normal guibg=gray20 guifg=White
+highlight Cursor guibg=Green guifg=NONE
+highlight NonText guibg=gray25
+highlight Constant gui=NONE guibg=gray22
+highlight Special gui=NONE guibg=grey30
+highlight Search guibg=OldLace
+highlight Search guibg=OldLace guifg=RoyalBlue
 
 " Make Ctrl-S save command in both normal mode and insert mode
 map <C-S> :w<CR>
