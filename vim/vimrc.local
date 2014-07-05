@@ -23,7 +23,9 @@ set autoindent			" Copy indents from current line when starting a new line
 set smartindent			" Set smart indenting on
 set modeline			" Allow support for modelines in files
 set hlsearch			" Highlight search results
-set colorcolumn=80		" Adds a visual indicatero or column 80
+set colorcolumn=80		" Adds a visual indicater to column 80
+" Set the visual indicator column color for term and GUI
+highlight ColorColumn ctermbg=brown guibg=#2c2c2c
 
 " Make folding available but leave it manual unless overridden by a syntax file
 set foldmethod=manual
