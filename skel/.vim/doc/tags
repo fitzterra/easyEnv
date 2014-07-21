@@ -1,5 +1,6 @@
 :Gist	gist-vim.txt	/*:Gist*
 Gist.vim	gist-vim.txt	/*Gist.vim*
+Tabular.txt	Tabular.txt	/*Tabular.txt*
 gist-vim-install	gist-vim.txt	/*gist-vim-install*
 gist-vim-license	gist-vim.txt	/*gist-vim-license*
 gist-vim-requirements	gist-vim.txt	/*gist-vim-requirements*
@@ -7,6 +8,12 @@ gist-vim-setup	gist-vim.txt	/*gist-vim-setup*
 gist-vim-thanks	gist-vim.txt	/*gist-vim-thanks*
 gist-vim-tips	gist-vim.txt	/*gist-vim-tips*
 gist-vim-usage	gist-vim.txt	/*gist-vim-usage*
+tabular	Tabular.txt	/*tabular*
+tabular-intro	Tabular.txt	/*tabular-intro*
+tabular-scripting	Tabular.txt	/*tabular-scripting*
+tabular-toc	Tabular.txt	/*tabular-toc*
+tabular-walkthrough	Tabular.txt	/*tabular-walkthrough*
+tabular.vim	Tabular.txt	/*tabular.vim*
 webapi-html	webapi-html.txt	/*webapi-html*
 webapi-html-contents	webapi-html.txt	/*webapi-html-contents*
 webapi-html-functions	webapi-html.txt	/*webapi-html-functions*
