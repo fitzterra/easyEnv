@@ -88,8 +88,8 @@ function setUserFiles ()
 		for n in $DESTS; do
 			if [ -f $n ]; then
 				# This is a file
-				chown --reference $f $DESTS || exit 1
-				chmod --reference $f $DESTS || exit 1
+				chown --reference $f $n || exit 1
+				chmod --reference $f $n || exit 1
 			else
 				# This is a dir
 				# A dir might have a .svn subdir... delete these
