@@ -67,7 +67,7 @@ function setUserFiles ()
 	# ownership and permission to the same as for the .bashrc in the same dir.
 
 	##~~ Variables ~~##
-	FILES="_p_/.inputrc _p_/.bashrc_local _p_/.vim _p_/System _p_/bin _p_/.vimrc _p_/vimwiki"
+	FILES="_p_/.inputrc _p_/.bashrc_local _p_/.vim _p_/System _p_/bin _p_/.vimrc"
 	SOURCES=${FILES//_p_/${MYDIR}/skel}
 	BASHRCs="/etc/skel/.bashrc /root/.bashrc /home/*/.bashrc"
 
