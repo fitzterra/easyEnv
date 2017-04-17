@@ -67,6 +67,11 @@ map <C-N> :tabnew .<CR>
 imap <C-N> <Esc>:tabnew .<CR>
 map <C-T> :tabnew .<CR>
 imap <C-T> <Esc>:tabnew .<CR>
+" Allow moving tabs left and right with Ctrl-Shift-Left/Right arrow
+map <C-S-Left> :tabmove -1<CR>
+imap <C-S-Left> <Esc>:tabmove -1<CR>
+map <C-S-Right> :tabmove +1<CR>
+imap <C-S-Right> <Esc>:tabmove +1<CR>
 
 " May need this if we have arb backups laying around
 "set nobackup           " Don't keep a backup file
