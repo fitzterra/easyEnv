@@ -11,3 +11,12 @@
 
 # Any further user specific local changes can be made here
 
+# Source todo.sh bash completion and also set an alias for todo.sh
+TODO_COMP=~/.todo/todo_completion
+[ -f "$TODO_COMP" ] && source "$TODO_COMP"
+alias t='todo.sh'
+# Make auto complete also work for the alias
+complete -F _todo t
+
+# While we're at it, also make the sudo alias 's' auto complete
+complete -F _root_command s
